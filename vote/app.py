@@ -13,8 +13,8 @@ hostname = socket.gethostname()
 app = Flask(__name__)
 
 def get_redis():
-    if not hasattr(g, 'redis'):
-        g.redis = Redis(host="redis2", db=0, password=redispassword, socket_timeout=5)
+    if not hasattr(g, 'redis2'):
+        g.redis = Redis(host="redis2", db=0, password=redis_password, socket_timeout=5)
     return g.redis
 
 @app.route("/", methods=['POST','GET'])
